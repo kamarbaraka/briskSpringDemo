@@ -1,1 +1,22 @@
-spring.application.name=briskSpringDemo
+#spring.application.name=briskSpringDemo
+
+spring:
+  application:
+    name: briskSpringDemo
+  threads:
+    virtual:
+      enabled: true
+  config:
+    import: optional:credentials.yaml
+springdoc:
+  swagger-ui:
+    use-root-path: true
+resilience4j:
+  ratelimiter:
+    instances:
+      briskSpringDemo:
+        limit-for-period: 10
+        limit-refresh-period:
+          10000
+        timeout-duration:
+          10000
