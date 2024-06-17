@@ -2,8 +2,8 @@ package com.kahindi.briskspringdemo.employee_profile.records;
 
 import java.io.Serializable;
 
-public record MIGPersonRecord(
-        String migPersonName,
-        String migPersonCompany
+public record VehicleRecord(
+        String name,
+        String model
 ) implements Serializable {
 }

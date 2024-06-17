@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicles</title>
+    <link th:rel="stylesheet" th:href="@{vehicle.css}"></link>
+</head>
+<body>
+
+<div>
+    <ol >
+        <li th:each="vehicle: ${vehicles}" >
+            <span th:class="vehicle_text" th:text="${vehicle.name()}"></span>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>

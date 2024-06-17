@@ -8,6 +8,9 @@ spring:
       enabled: true
   config:
     import: optional:credentials.yaml
+  jpa:
+    hibernate:
+      ddl-auto: update
 springdoc:
   swagger-ui:
     use-root-path: true
@@ -20,3 +23,9 @@ resilience4j:
           10000
         timeout-duration:
           10000
+server:
+  port: 9090
+
+grpc:
+  server:
+    port: 9091
