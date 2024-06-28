@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="https://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>books</title>
+</head>
+<body>
+
+<div>
+    <ol>
+        <li th:each="book : ${books}" th:class="book_list">
+            <span th:class="book_title" th:text="${book.getTitle()}"></span>
+            <span th:class="book_subtitle" th:text="${book.getSubtitle()}"></span>
+            <ul>
+                <li th:class="author_list" th:each="author : ${book.getAuthors()}">
+                    <span th:class="book_author" th:text="${author}"></span>
+                </li>
+            </ul>
+            <span th:class="book_price" th:text="${book.getPrice()}"></span>
+        </li>
+        <br>
+    </ol>
+</div>
+
+</body>
+</html>

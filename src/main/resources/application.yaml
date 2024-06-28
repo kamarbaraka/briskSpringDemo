@@ -29,3 +29,7 @@ server:
 grpc:
   server:
     port: 9091
+  client:
+    server:
+      host: localhost
+      port: 9091

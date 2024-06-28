@@ -1,0 +1,27 @@
+
+/**Service Interface Definition for Order management
+@author samson baraka*/
+
+syntax = "proto3";
+
+package orders;
+import "ProductService.proto";
+
+/*define the message to request an order*/
+message OrderRequest{
+  repeated product.ProductID id = 1;
+}
+
+/*define the message to place an order*/
+
+/*define order message*/
+message Order{
+  string orderNo = 1;
+  product.ProductList products = 2;
+}
+
+/*define the service*/
+service OrderService{
+  rpc placeOrder(OrderRequest) returns (Order);
+  rpc getAllOrders(product.Empty) returns (stream Order);
+}

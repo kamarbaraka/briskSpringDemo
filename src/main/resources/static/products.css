@@ -1,0 +1,27 @@
+
+/*style for the main div*/
+#main_div{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    background-color: cyan;
+    border-radius: 20px;
+}
+/*stylesheet for the products*/
+.product_name{
+    color: blue;
+    font-size: 16px;
+    font-weight: normal;
+}
+/*styles for the product price*/
+.product_price{
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/*style for product serial*/
+.product_serial{
+    color: green;
+    font-size: 10px;
+}

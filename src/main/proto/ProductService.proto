@@ -1,0 +1,41 @@
+
+//protobuf version
+syntax = 'proto3';
+
+//provide options
+option java_multiple_files = true;
+
+//define the package this service belongs to
+package product;
+
+//define the message types/formats to use
+//the product
+message Product{
+  int64 ID = 1;
+  string productName = 2;
+  string serialNo = 3;
+  double price = 4;
+}
+
+//wrapper for the product ID
+message ProductID{
+  int64 ID = 1;
+}
+
+//wrapper for a list of products
+message ProductList{
+  repeated Product products = 1;
+}
+
+//an empty message
+message Empty{}
+
+//define the services
+service ProductService{
+//  register a product to the system
+  rpc register(Product) returns (ProductID);
+//  query products by their IDs
+  rpc findProductByID(ProductID) returns (Product);
+//  get all products registered
+  rpc findAll(Empty) returns (ProductList);
+}

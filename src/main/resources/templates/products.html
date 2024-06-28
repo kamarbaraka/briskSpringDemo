@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>products</title>
+
+    <link th:rel="stylesheet"  th:href="@{/products.css}">
+</head>
+<body>
+
+<div th:id="main_div">
+    <ol >
+        <li th:each="product : ${products}">
+            <span th:class="product_name" th:text="${product.getProductName()}+ ' '"></span>
+            <span th:class="product_serial" th:text="${'('+ product.getSerialNo()+ ')'}"></span>
+            <br>
+            <span th:class="product_price" th:text="'$ '+${product.getPrice()}"></span>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
