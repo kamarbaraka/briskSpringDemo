@@ -21,7 +21,6 @@ message Product{
 message ProductID{
   int64 ID = 1;
 }
-
 //wrapper for a list of products
 message ProductList{
   repeated Product products = 1;
